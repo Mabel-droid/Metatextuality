@@ -71,11 +71,14 @@ function preload() {
 }
 
 function setup() {
+  let cnv
   if (windowHeight > map(9, 0, 16, 0, windowWidth)) {
-    createCanvas(windowWidth, map(9, 0, 16, 0, windowWidth));
+    cnv = createCanvas(windowWidth, map(9, 0, 16, 0, windowWidth));
   } else {
-    createCanvas(map(16, 0, 9, 0, windowHeight), windowHeight);
+    cnv = createCanvas(map(16, 0, 9, 0, windowHeight), windowHeight);
   }
+  cnv.position( windowWidth / 2 - width / 2, windowHeight / 2 - height / 2 )
+
   makePath();
 
   console.log(`slide: ${cslide}`);

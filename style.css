@@ -4,6 +4,7 @@ body {
   padding: 0;
 
   canvadisplay: block;
+  background: black;
 }
 
 #p5_loading {
