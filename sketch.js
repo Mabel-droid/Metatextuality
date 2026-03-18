@@ -77,7 +77,7 @@ function setup() {
   } else {
     cnv = createCanvas(map(16, 0, 9, 0, windowHeight), windowHeight);
   }
-  cnv.position( windowWidth / 2 - width / 2, windowHeight / 2 - height / 2 )
+  cnv.position(windowWidth / 2 - width / 2, windowHeight / 2 - height / 2)
 
   makePath();
 
@@ -254,6 +254,9 @@ class Slide {
       background(100, 100, 0);
       tc = color(255, 255, 0);
     } else if (this.speaker == "Nate") {
+      background(200);
+      tc = color(255);
+    } else if (this.speaker == "Bee") {
       background(200);
       tc = color(255);
     } else {
