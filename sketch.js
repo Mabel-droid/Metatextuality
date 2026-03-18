@@ -1,5 +1,5 @@
 let cslide = "a";
-let hasButton = false;
+let smode = "forward";
 let buttons = [],
   slides = [];
 let bount = 4;
@@ -13,6 +13,10 @@ let bt1, bt2, bt3, bt4;
 let canGo = true;
 let showSlide = 0;
 let press = true;
+let pinx;
+let spx;
+let stop = false;
+let bars = [];
 
 function preload() {
   // loading
@@ -82,10 +86,13 @@ function setup() {
   makePath();
 
   console.log(`slide: ${cslide}`);
+
+  pinx = random(6, 94);
+  spx = random([1, -1]);
 }
 
 function draw() {
-  if (mouseIsPressed == true && slides[showSlide].hasButton == false) {
+  if (mouseIsPressed == true && slides[showSlide].smode == "forward" || (mouseX < width / 10 && mouseX > 5 && mouseY < width / 30 && mouseY > 5)) {
     press = false;
   }
   if (mouseIsPressed == false) {
@@ -100,7 +107,7 @@ function draw() {
   }
 
   slides[showSlide].show();
-  if (slides[showSlide].hasButton == true) {
+  if (slides[showSlide].smode == "button") {
     makeButton(
       slides[showSlide].sbount,
       slides[showSlide].sbt1,
@@ -108,6 +115,11 @@ function draw() {
       slides[showSlide].sbt3,
       slides[showSlide].sbt4
     );
+  }
+
+  if (slides[showSlide].smode == "bar"
+  ) {
+    makeBar()
   }
 
   //botão de voltar
@@ -161,7 +173,7 @@ function mousePressed() {
       cslide = cslide.slice(0, -1);
       console.log(`slide: ${cslide}`);
     }
-  } else if (slides[showSlide].hasButton == false && canGo == true) {
+  } else if (slides[showSlide].smode == "forward" && canGo == true) {
     cslide += "a";
     console.log(`slide: ${cslide}`);
   }
@@ -189,7 +201,7 @@ class Button {
       if (
         mouseIsPressed == true &&
         press == true &&
-        slides[showSlide].hasButton == true
+        slides[showSlide].smode == "button"
       ) {
         press = false;
         cslide += this.bb;
@@ -216,7 +228,7 @@ class Slide {
     sprite2,
     ord,
     pos,
-    hasButton,
+    smode,
     sbount,
     sbt1,
     sbt2,
@@ -229,7 +241,7 @@ class Slide {
     this.sprite2 = sprite2;
     this.ord = ord;
     this.pos = pos;
-    this.hasButton = hasButton;
+    this.smode = smode;
     this.sbount = sbount;
     this.sbt1 = sbt1;
     this.sbt2 = sbt2;
@@ -257,8 +269,11 @@ class Slide {
       background(200);
       tc = color(255);
     } else if (this.speaker == "Bee") {
-      background(200);
-      tc = color(255);
+      background(200, 0, 0);
+      tc = color(255, 0, 0);
+    } else if (this.speaker == "Blake") {
+      background(0, 100, 0);
+      tc = color(0, 255, 0);
     } else {
       background(255);
       tc = color(255);
@@ -298,7 +313,7 @@ class Slide {
         text(`${this.quote}`, width / 30, height / 1.4, width - width / 30);
       }
     }
-    if (this.hasButton == true) {
+    if (this.smode == "button") {
       for (let button of buttons) {
         button.show();
       }
@@ -306,10 +321,67 @@ class Slide {
   }
 }
 
-function windowResized() {
-  if (windowHeight > map(9, 0, 16, 0, windowWidth)) {
-    resizeCanvas(windowWidth, map(9, 0, 16, 0, windowWidth));
-  } else {
-    resizeCanvas(map(16, 0, 9, 0, windowHeight), windowHeight);
+function makeBar() {
+  rectMode(CENTER);
+  fill(255, 0, 0);
+  rect(width / 2, height / 1.17, width * 0.95, height / 20);
+  fill(255, 255, 0);
+  rect(width / 2, height / 1.17, map(
+    60,
+    0,
+    100,
+    width / 2 - (width * 0.95) / 2,
+    width / 2 + (width * 0.95) / 2
+  ), height / 20);
+  fill(0, 255, 0);
+  rect(width / 2, height / 1.17, map(
+    40,
+    0,
+    100,
+    width / 2 - (width * 0.95) / 2,
+    width / 2 + (width * 0.95) / 2
+  ), height / 20);
+  fill(255);
+  rect(
+    map(
+      pinx,
+      0,
+      100,
+      width / 2 - (width * 0.95) / 2,
+      width / 2 + (width * 0.95) / 2
+    ),
+    height / 1.17,
+    height / 100,
+    height / 20
+  );
+  if (stop == false) {
+    pinx += spx;
   }
+  if (pinx >= 99 || pinx <= 1) {
+    spx *= -1;
+  }
+  if (
+    mouseIsPressed == true &&
+    press == true
+  ) {
+    press = false;
+    if (pinx > 40 && pinx < 60) {
+      cslide += "b"
+    } else if (pinx > 20 && pinx < 80) {
+      cslide += "c"
+    } else {
+      cslide += "d"
+    }
+    console.log(`slide: ${cslide}`);
+  }
+}
+
+function windowResized() {
+  let cnv
+  if (windowHeight > map(9, 0, 16, 0, windowWidth)) {
+    cnv = createCanvas(windowWidth, map(9, 0, 16, 0, windowWidth));
+  } else {
+    cnv = createCanvas(map(16, 0, 9, 0, windowHeight), windowHeight);
+  }
+  cnv.position(windowWidth / 2 - width / 2, windowHeight / 2 - height / 2)
 }
