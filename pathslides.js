@@ -163,7 +163,7 @@ function makePath() {
   ord = "a";
   pos = 0;
 
-  smode = "bar";
+  smode = "button";
 
   sbount = 2;
   sbt1 = "Eu vou com o George";
@@ -273,7 +273,7 @@ function makePath() {
   sprite1 = Georgesad1;
   sprite2 = false;
 
-  ord = "c";
+  ord = "f";
   pos = 0;
 
   smode = "forward";
@@ -328,6 +328,17 @@ function makePath() {
     } else if (slides[i].ord == "e") {
       for (j = 0; i < slides.length; j++) {
         if (overpos.charAt(overpos.length - 1) != "d") {
+          overpos = overpos.slice(0, -1);
+        } else {
+          overpos = overpos.slice(0, -1);
+          overpos += slides[i].ord;
+          slides[i].pos = overpos;
+          break;
+        }
+      }
+    } else if (slides[i].ord == "f") {
+      for (j = 0; i < slides.length; j++) {
+        if (overpos.charAt(overpos.length - 1) != "b") {
           overpos = overpos.slice(0, -1);
         } else {
           overpos = overpos.slice(0, -1);
