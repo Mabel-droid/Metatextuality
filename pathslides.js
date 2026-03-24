@@ -653,6 +653,21 @@ function makePath() {
   slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
   slides.push(slide);
 
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = false;
+  sprite1 = Amberneutral1;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "bar";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
   /* ------------------------------
   
   Ordernar

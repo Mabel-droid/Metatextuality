@@ -17,6 +17,7 @@ let pinx;
 let spx;
 let stop = false;
 let bars = [];
+let loading = true
 
 function preload() {
   // loading
@@ -75,6 +76,7 @@ function preload() {
 }
 
 function setup() {
+  loading = false
   let cnv
   if (windowHeight > map(9, 0, 16, 0, windowWidth)) {
     cnv = createCanvas(windowWidth, map(9, 0, 16, 0, windowWidth));
@@ -168,15 +170,17 @@ function makeButton(bount, bt1, bt2, bt3, bt4) {
 }
 
 function mousePressed() {
-  if (mouseButton === LEFT) {
-    if (mouseX < width / 10 && mouseX > 5 && mouseY < width / 30 && mouseY > 5) {
-      if (cslide != "aa") {
-        cslide = cslide.slice(0, -1);
+  if (loading == false) {
+    if (mouseButton === LEFT) {
+      if (mouseX < width / 10 && mouseX > 5 && mouseY < width / 30 && mouseY > 5) {
+        if (cslide != "aa") {
+          cslide = cslide.slice(0, -1);
+          console.log(`slide: ${cslide}`);
+        }
+      } else if (slides[showSlide].smode == "forward" && canGo == true) {
+        cslide += "a";
         console.log(`slide: ${cslide}`);
       }
-    } else if (slides[showSlide].smode == "forward" && canGo == true) {
-      cslide += "a";
-      console.log(`slide: ${cslide}`);
     }
   }
 }
@@ -329,7 +333,7 @@ function makeBar() {
   rect(width / 2, height / 1.17, width * 0.95, height / 20);
   fill(255, 255, 0);
   rect(width / 2, height / 1.17, map(
-    60,
+    40,
     0,
     100,
     width / 2 - (width * 0.95) / 2,
@@ -337,7 +341,7 @@ function makeBar() {
   ), height / 20);
   fill(0, 255, 0);
   rect(width / 2, height / 1.17, map(
-    40,
+    10,
     0,
     100,
     width / 2 - (width * 0.95) / 2,
@@ -367,9 +371,9 @@ function makeBar() {
     press == true && mouseButton === LEFT
   ) {
     press = false;
-    if (pinx > 40 && pinx < 60) {
+    if (pinx > 45 && pinx < 55) {
       cslide += "b"
-    } else if (pinx > 20 && pinx < 80) {
+    } else if (pinx > 30 && pinx < 70) {
       cslide += "c"
     } else {
       cslide += "d"
