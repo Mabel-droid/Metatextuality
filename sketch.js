@@ -92,7 +92,7 @@ function setup() {
 }
 
 function draw() {
-  if (mouseIsPressed == true && slides[showSlide].smode == "forward" || (mouseX < width / 10 && mouseX > 5 && mouseY < width / 30 && mouseY > 5)) {
+  if (mouseIsPressed == true && slides[showSlide].smode == "forward" && mouseButton === LEFT || (mouseX < width / 10 && mouseX > 5 && mouseY < width / 30 && mouseY > 5)) {
     press = false;
   }
   if (mouseIsPressed == false) {
@@ -168,14 +168,16 @@ function makeButton(bount, bt1, bt2, bt3, bt4) {
 }
 
 function mousePressed() {
-  if (mouseX < width / 10 && mouseX > 5 && mouseY < width / 30 && mouseY > 5) {
-    if (cslide != "aa") {
-      cslide = cslide.slice(0, -1);
+  if (mouseButton === LEFT) {
+    if (mouseX < width / 10 && mouseX > 5 && mouseY < width / 30 && mouseY > 5) {
+      if (cslide != "aa") {
+        cslide = cslide.slice(0, -1);
+        console.log(`slide: ${cslide}`);
+      }
+    } else if (slides[showSlide].smode == "forward" && canGo == true) {
+      cslide += "a";
       console.log(`slide: ${cslide}`);
     }
-  } else if (slides[showSlide].smode == "forward" && canGo == true) {
-    cslide += "a";
-    console.log(`slide: ${cslide}`);
   }
 }
 
@@ -200,7 +202,7 @@ class Button {
     ) {
       if (
         mouseIsPressed == true &&
-        press == true &&
+        press == true && mouseButton === LEFT &&
         slides[showSlide].smode == "button"
       ) {
         press = false;
@@ -362,7 +364,7 @@ function makeBar() {
   }
   if (
     mouseIsPressed == true &&
-    press == true
+    press == true && mouseButton === LEFT
   ) {
     press = false;
     if (pinx > 40 && pinx < 60) {
