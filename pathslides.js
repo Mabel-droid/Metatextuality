@@ -273,13 +273,29 @@ function makePath() {
   sprite1 = Georgesad1;
   sprite2 = false;
 
-  ord = "f";
+  ord = "c";
   pos = 0;
 
   smode = "forward";
 
   slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
   slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = "O som de algo a ranger vem do fim dum corredor.";
+  sprite1 = Georgesad2;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  hasButton = false;
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, hasButton);
+  slides.push(slide);
+
 
   /* ------------------------------ */
 
@@ -328,17 +344,6 @@ function makePath() {
     } else if (slides[i].ord == "e") {
       for (j = 0; i < slides.length; j++) {
         if (overpos.charAt(overpos.length - 1) != "d") {
-          overpos = overpos.slice(0, -1);
-        } else {
-          overpos = overpos.slice(0, -1);
-          overpos += slides[i].ord;
-          slides[i].pos = overpos;
-          break;
-        }
-      }
-    } else if (slides[i].ord == "f") {
-      for (j = 0; i < slides.length; j++) {
-        if (overpos.charAt(overpos.length - 1) != "b") {
           overpos = overpos.slice(0, -1);
         } else {
           overpos = overpos.slice(0, -1);
