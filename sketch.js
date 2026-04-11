@@ -180,6 +180,9 @@ function mousePressed() {
       } else if (slides[showSlide].smode == "forward" && canGo == true) {
         cslide += "a";
         console.log(`slide: ${cslide}`);
+      } else if (slides[showSlide].smode == "link" && canGo == true) {
+        cslide = slides[showSlide + 2].pos;
+        console.log(`slide: ${cslide}`);
       }
     }
   }

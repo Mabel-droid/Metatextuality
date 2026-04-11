@@ -261,7 +261,7 @@ function makePath() {
   ord = "b";
   pos = 0;
 
-  smode = "forward";
+  smode = "link";
 
   slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
   slides.push(slide);
