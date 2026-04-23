@@ -750,8 +750,23 @@ function makePath() {
   /* ------------------------------ */
 
   speaker = "Nate";
-  quote = "De repente, um rato corre na tua direção.";
+  quote = "De repente, um rato corre na tua direção, tentando morder-te.";
   sprite1 = Amberneutral1;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Amber";
+  quote = "Para derrotar o rato, clique quando a barra branca estiver na área verde ou amarela. Quando pronto, clique para avançar.";
+  sprite1 = false;
   sprite2 = false;
 
   ord = "a";
@@ -766,7 +781,7 @@ function makePath() {
 
   speaker = "Nate";
   quote = false;
-  sprite1 = Amberneutral1;
+  sprite1 = false;
   sprite2 = false;
 
   ord = "a";
