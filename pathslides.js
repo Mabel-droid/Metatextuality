@@ -607,7 +607,7 @@ function makePath() {
 
   slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
   slides.push(slide);
-  
+
   /* ------------------------------ */
 
   speaker = "George";
@@ -622,7 +622,7 @@ function makePath() {
 
   slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
   slides.push(slide);
-  
+
   /* ------------------------------ */
 
   speaker = "Nate";
@@ -637,7 +637,7 @@ function makePath() {
 
   slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
   slides.push(slide);
-  
+
   /* ------------------------------ */
 
   speaker = "Nate";
@@ -650,7 +650,7 @@ function makePath() {
 
   smode = "button";
 
-    sbount = 2;
+  sbount = 2;
   sbt1 = "Investigar";
   sbt2 = "Procurar George";
   sbt3 = false;
@@ -671,7 +671,7 @@ function makePath() {
     sbt4
   );
   slides.push(slide);
-  
+
   /* ------------------------------ */
 
   speaker = "Nate";
@@ -773,6 +773,51 @@ function makePath() {
   pos = 0;
 
   smode = "bar";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = false;
+  sprite1 = Amberneutral1;
+  sprite2 = false;
+
+  ord = "b";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = false;
+  sprite1 = Amberneutral1;
+  sprite2 = false;
+
+  ord = "c";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = false;
+  sprite1 = Amberneutral1;
+  sprite2 = false;
+
+  ord = "d";
+  pos = 0;
+
+  smode = "forward";
 
   slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
   slides.push(slide);
