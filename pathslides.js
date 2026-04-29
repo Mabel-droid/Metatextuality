@@ -904,8 +904,23 @@ function makePath() {
   /* ------------------------------ */
 
   speaker = "Nate";
-  quote = "De repente, um rato corre na tua direção.";
+  quote = "De repente, um rato corre na tua direção, tentando morder-te.";
   sprite1 = Amberneutral1;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Amber";
+  quote = "Para derrotar o rato, clique quando a barra branca estiver na área verde ou amarela. Quando pronto, clique para avançar.";
+  sprite1 = false;
   sprite2 = false;
 
   ord = "a";
@@ -920,7 +935,7 @@ function makePath() {
 
   speaker = "Nate";
   quote = false;
-  sprite1 = Amberneutral1;
+  sprite1 = false;
   sprite2 = false;
 
   ord = "a";
@@ -934,14 +949,14 @@ function makePath() {
   /* ------------------------------ */
 
   speaker = "Nate";
-  quote = false;
-  sprite1 = Amberneutral1;
+  quote = "O rato derrotado cai no chão.";
+  sprite1 = Amberhappy2;
   sprite2 = false;
 
   ord = "b";
   pos = 0;
 
-  smode = "forward";
+  smode = "link";
 
   slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
   slides.push(slide);
@@ -949,8 +964,8 @@ function makePath() {
   /* ------------------------------ */
 
   speaker = "Nate";
-  quote = false;
-  sprite1 = Amberneutral1;
+  quote = "O rato derrotado cai no chão.";
+  sprite1 = Amberhappy2;
   sprite2 = false;
 
   ord = "c";
@@ -963,9 +978,84 @@ function makePath() {
 
   /* ------------------------------ */
 
+  speaker = "Amber";
+  quote = "Wow! Isso foi incrível!";
+  sprite1 = Amberhappy1;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Amber";
+  quote = "Mais acho que foi perigoso também...";
+  sprite1 = Amberneutral2;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Amber";
+  quote = "Nós deviamos chamar os outros para ajudar!";
+  sprite1 = Amberhappy1;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
   speaker = "Nate";
-  quote = false;
-  sprite1 = Amberneutral1;
+  quote = "Amber vai ter com o grupo e, após um tempo, retorna com todos.";
+  sprite1 = false;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = "Mais acho que foi perigoso também...";
+  sprite1 = Amberhappy1;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = "Sofrendo mordidas do rato, tu cais no chão.";
+  sprite1 = false;
   sprite2 = false;
 
   ord = "d";
