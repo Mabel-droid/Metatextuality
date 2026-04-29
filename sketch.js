@@ -2,6 +2,7 @@ let cslide = "a";
 let smode = "forward";
 let buttons = [], slides = [];
 let endings = 0;
+let uends = 0;
 let bount = 4;
 let speaker;
 let tc;
@@ -128,6 +129,18 @@ function draw() {
   if (slides[showSlide].smode == "bar"
   ) {
     makeBar()
+  }
+
+  if (slides[showSlide].smode == "end") {
+    if (slides[showSlide].unlock == false) {
+      slides[showSlide].unlock = true
+      uends++
+    }
+    stroke(0);
+    strokeWeight(3);
+    textSize(width / 30);
+    textAlign(CENTER, CENTER);
+    text(`Final ${uends} de ${endings}`, width / 2, height / 2);
   }
 
   //botão de voltar
@@ -262,6 +275,9 @@ class Slide {
     this.sbt2 = sbt2;
     this.sbt3 = sbt3;
     this.sbt4 = sbt4;
+    if (this.smode == "end") {
+      this.unlock = false;
+    }
   }
 
   show() {
