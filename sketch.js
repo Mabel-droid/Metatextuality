@@ -1,7 +1,7 @@
 let cslide = "a";
 let smode = "forward";
-let buttons = [],
-  slides = [];
+let buttons = [], slides = [];
+let endings = 0;
 let bount = 4;
 let speaker;
 let tc;
@@ -88,6 +88,12 @@ function setup() {
   makePath();
 
   console.log(`slide: ${cslide}`);
+
+  for (i = 0; i < slides.length; i++) {
+    if (slides[i].smode == "end") {
+      endings++
+    }
+  }
 
   pinx = random(6, 94);
   spx = random([1, -1]);

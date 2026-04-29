@@ -581,6 +581,175 @@ function makePath() {
   /* ------------------------------ */
 
   speaker = "Nate";
+  quote = "Tu desce da janela.";
+  sprite1 = Georgesad2;
+  sprite2 = false;
+
+  ord = "c";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "George";
+  quote = "E então? Encontraste alguma coisa?";
+  sprite1 = Georgesad1;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = "Abanas a cabeça.";
+  sprite1 = Georgesad2;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "George";
+  quote = "Ah... E agora?";
+  sprite1 = Georgesad1;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = false;
+  sprite1 = Georgesad2;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "button";
+
+  sbount = 2;
+  sbt1 = "Vamos explorar a biblioteca";
+  sbt2 = "Vamos esperar aqui";
+  sbt3 = false;
+  sbt4 = false;
+
+  slide = new Slide(
+    speaker,
+    quote,
+    sprite1,
+    sprite2,
+    ord,
+    pos,
+    smode,
+    sbount,
+    sbt1,
+    sbt2,
+    sbt3,
+    sbt4
+  );
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = "Explorando os caminhos que aparecem a tua frente, tu encontras uma grande porta de metal.";
+  sprite1 = false;
+  sprite2 = false;
+
+  ord = "b";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = "Enquanto tu e George esperam, tu ouvez um rosnar.";
+  sprite1 = Georgesad2;
+  sprite2 = false;
+
+  ord = "c";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = "Dessa vez muito mais perto.";
+  sprite1 = Georgesad2;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = "As garras de uma fera saem duma ventilação e atacam George, partindo o corpo dele.";
+  sprite1 = false;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = "A criatura vira-se para olhar para ti com os olhos de um predador faminto.";
+  sprite1 = false;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "end";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
   quote = "A cada passo, o ambiente torna-se mais escuro.";
   sprite1 = Georgesad2;
   sprite2 = false;
@@ -612,7 +781,7 @@ function makePath() {
 
   speaker = "George";
   quote = "O-Ok, basta pra mim!";
-  sprite1 = Georgesad2;
+  sprite1 = Georgesad1;
   sprite2 = false;
 
   ord = "a";
@@ -680,21 +849,6 @@ function makePath() {
   sprite2 = false;
 
   ord = "b";
-  pos = 0;
-
-  smode = "forward";
-
-  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
-  slides.push(slide);
-
-  /* ------------------------------ */
-
-  speaker = "Nate";
-  quote = "Tu e Amber caminham pelo corredor escuro.";
-  sprite1 = Georgehappy2;
-  sprite2 = false;
-
-  ord = "c";
   pos = 0;
 
   smode = "forward";
