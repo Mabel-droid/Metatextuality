@@ -690,6 +690,359 @@ function makePath() {
   /* ------------------------------ */
 
   speaker = "Nate";
+  quote = false;
+  sprite1 = false;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "button";
+
+  sbount = 2;
+  sbt1 = "Abrir a porta";
+  sbt2 = "Ignorar a porta";
+  sbt3 = false;
+  sbt4 = false;
+
+  slide = new Slide(
+    speaker,
+    quote,
+    sprite1,
+    sprite2,
+    ord,
+    pos,
+    smode,
+    sbount,
+    sbt1,
+    sbt2,
+    sbt3,
+    sbt4
+  );
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = "Ao abrires a porta, ves o mundo exterior.";
+  sprite1 = false;
+  sprite2 = false;
+
+  ord = "b";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = "O mundo real.";
+  sprite1 = false;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "George";
+  quote = "É-É a saída...";
+  sprite1 = Georgenervous1;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "George";
+  quote = "Nós temos que mostrar aos outros...";
+  sprite1 = Georgehappy1;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = false;
+  sprite1 = false;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "button";
+
+  sbount = 2;
+  sbt1 = "Abandona-los";
+  sbt2 = "Salva-los";
+  sbt3 = false;
+  sbt4 = false;
+
+  slide = new Slide(
+    speaker,
+    quote,
+    sprite1,
+    sprite2,
+    ord,
+    pos,
+    smode,
+    sbount,
+    sbt1,
+    sbt2,
+    sbt3,
+    sbt4
+  );
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "George";
+  quote = "Ei, espera-";
+  sprite1 = Georgesad2;
+  sprite2 = false;
+
+  ord = "b";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = "Tu corres para fora.";
+  sprite1 = false;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = "A porta desaparece atrás de ti, como se nunca tivesse existido.";
+  sprite1 = false;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = "Seria tudo um sonho..?";
+  sprite1 = false;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "end";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = "Tu e George voltam correndo para encontrar a todos.";
+  sprite1 = Georgesad2;
+  sprite2 = false;
+
+  ord = "c";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Harriet";
+  quote = "E então? O que encontraram?";
+  sprite1 = Georgenervous2;
+  sprite2 = Harriethappy1;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "George";
+  quote = "Encontramos a saída!";
+  sprite1 = Georgenervous1;
+  sprite2 = Harrietworried2;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Watson";
+  quote = "A saída? De verdade?";
+  sprite1 = Georgenervous2;
+  sprite2 = Watsonneutral1;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = "Tu levas os outros até a porta.";
+  sprite1 = Georgenervous2;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "George";
+  quote = "Estão vendo? É real!";
+  sprite1 = Georgenervous1;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Amber";
+  quote = "E assim termina nossa aventura...";
+  sprite1 = Georgenervous2;
+  sprite2 = Amberhappy1;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "George";
+  quote = "(Nem fizeste nada...)";
+  sprite1 = Georgesad2;
+  sprite2 = Amberhappy2;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "George";
+  quote = "(Nem fizeste nada...)";
+  sprite1 = Georgesad2;
+  sprite2 = Amberhappy2;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = "Tu ignoras a porta, virando-se para o outro lado.";
+  sprite1 = false;
+  sprite2 = false;
+
+  ord = "c";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = "Na parede, encontras... Uma grande porta de metal.";
+  sprite1 = false;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "loop";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
   quote = "Enquanto tu e George esperam, tu ouvez um rosnar.";
   sprite1 = Georgesad2;
   sprite2 = false;

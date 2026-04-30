@@ -101,7 +101,7 @@ function setup() {
 }
 
 function draw() {
-  if (mouseIsPressed == true && slides[showSlide].smode == "forward" && mouseButton === LEFT || (mouseX < width / 10 && mouseX > 5 && mouseY < width / 30 && mouseY > 5)) {
+  if (mouseIsPressed == true && (slides[showSlide].smode == "forward" || slides[showSlide].smode == "loop") && mouseButton === LEFT || (mouseX < width / 10 && mouseX > 5 && mouseY < width / 30 && mouseY > 5)) {
     press = false;
   }
   if (mouseIsPressed == false) {
@@ -201,6 +201,9 @@ function mousePressed() {
         console.log(`slide: ${cslide}`);
       } else if (slides[showSlide].smode == "link" && canGo == true) {
         cslide = slides[showSlide + 2].pos;
+        console.log(`slide: ${cslide}`);
+      } else if (slides[showSlide].smode == "loop" && canGo == true) {
+        cslide = cslide.slice(0, -2);
         console.log(`slide: ${cslide}`);
       }
     }
