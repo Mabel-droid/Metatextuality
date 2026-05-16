@@ -997,15 +997,75 @@ function makePath() {
 
   /* ------------------------------ */
 
-  speaker = "George";
-  quote = "(Nem fizeste nada...)";
-  sprite1 = Georgesad2;
-  sprite2 = Amberhappy2;
+  speaker = "Nate";
+  quote = "Todos saem";
+  sprite1 = false;
+  sprite2 = false;
 
   ord = "a";
   pos = 0;
 
   smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = "Mas tu escutas um rosnar de trás de ti";
+  sprite1 = false;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = "Tu vira-se a tempo de ver garras, que cortam o teu peito";
+  sprite1 = false;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = "Teu corpo cai para trás, fechando a porta";
+  sprite1 = false;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = "Salvas-te os outros, mas ao custo de ti...";
+  sprite1 = false;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "end";
 
   slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
   slides.push(slide);
@@ -1391,9 +1451,39 @@ function makePath() {
 
   /* ------------------------------ */
 
-  speaker = "Nate";
-  quote = "Mais acho que foi perigoso também...";
-  sprite1 = Amberhappy1;
+  speaker = "George";
+  quote = "Por que eu...";
+  sprite1 = Georgesad2;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Harriet";
+  quote = "Oiii~!";
+  sprite1 = Harriethappy1;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Watson";
+  quote = "Olá.";
+  sprite1 = Watsonneutral1;
   sprite2 = false;
 
   ord = "a";
