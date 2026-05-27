@@ -1,24 +1,29 @@
-let cslide = "a";
-let smode = "forward";
-let buttons = [], slides = [];
-let endings = 0;
-let uends = 0;
-let bount = 4;
-let speaker;
-let tc;
-let bg;
-let quote;
-let sprite1;
-let sprite2;
-let bt1, bt2, bt3, bt4;
-let canGo = true;
-let showSlide = 0;
-let press = true;
-let pinx;
-let spx;
-let stop = false;
-let bars = [];
-let loading = true
+var cslide = "a";
+var smode = "forward";
+var buttons = [], slides = [];
+var endings = 0;
+var uends = 0;
+var bount = 4;
+var speaker;
+var tc;
+var bg;
+var quote;
+var index = 0;
+var lastMillis = 0;
+var sprite1;
+var sprite2;
+var bt1, bt2, bt3, bt4;
+var canGo = true;
+var showSlide = 0;
+var press = true;
+var pinx;
+var spx;
+var stop = false;
+var bars = [];
+var loading = true;
+var slidecheck = 0;
+var beep;
+var voice = 1;
 
 function preload() {
   // loading
@@ -29,6 +34,8 @@ function preload() {
   }
 
   titlecard = loadImage("./sprites/other/titlecard.png");
+
+  beep = loadSound('./sprites/beep.mp3');
 
   // Amber sprites
   Amberangry1 = loadImage("./sprites/char/Amber/Amber_angry.png");
@@ -78,7 +85,7 @@ function preload() {
 
 function setup() {
   loading = false
-  let cnv
+  var cnv
   if (windowHeight > map(9, 0, 16, 0, windowWidth)) {
     cnv = createCanvas(windowWidth, map(9, 0, 16, 0, windowWidth));
   } else {
@@ -113,6 +120,27 @@ function draw() {
       showSlide = i;
       break;
     }
+  }
+
+  if (millis() > lastMillis + 25 && index != slides[showSlide].quote.length && slides[showSlide].quote != false
+  ) {
+    console.log("Typing")
+
+    if (slides[showSlide].quote[index] != (" ") && slides[showSlide].quote[index] != (",") && slides[showSlide].quote[index] != (".")) {
+
+      beep.amp(0.2)
+      beep.rate(random((voice * 0.9), (voice * 1.1)))
+
+      beep.play()
+    }
+
+    index = index + 1;
+    lastMillis = millis();
+  }
+
+  if (slidecheck != cslide) {
+    index = 0
+    slidecheck = cslide
   }
 
   slides[showSlide].show();
@@ -163,12 +191,12 @@ function draw() {
 function makeButton(bount, bt1, bt2, bt3, bt4) {
   buttons.length = 0;
   for (i = 0; i < bount; i++) {
-    let bx = width / 2;
-    let by = (height / bount) * i + height / 2 / bount;
-    let bw = width / 3;
-    let bh = height / 2 / bount;
-    let bt;
-    let bb;
+    var bx = width / 2;
+    var by = (height / bount) * i + height / 2 / bount;
+    var bw = width / 3;
+    var bh = height / 2 / bount;
+    var bt;
+    var bb;
     if (i == 0) {
       bt = bt1;
       bb = "b";
@@ -183,7 +211,7 @@ function makeButton(bount, bt1, bt2, bt3, bt4) {
       bb = "e";
     }
     textAlign(CENTER, CENTER);
-    let button = new Button(bx, by, bw, bh, bt, bb);
+    var button = new Button(bx, by, bw, bh, bt, bb);
     buttons.push(button);
   }
 }
@@ -197,7 +225,13 @@ function mousePressed() {
           console.log(`slide: ${cslide}`);
         }
       } else if (slides[showSlide].smode == "forward" && canGo == true) {
-        cslide += "a";
+        if (
+          index != slides[showSlide].quote.length && slides[showSlide].quote != false
+        ) {
+          index = slides[showSlide].quote.length
+        } else {
+          cslide += "a";
+        }
         console.log(`slide: ${cslide}`);
       } else if (slides[showSlide].smode == "link" && canGo == true) {
         cslide = slides[showSlide + 2].pos;
@@ -288,27 +322,35 @@ class Slide {
     fill(0);
 
     if (this.speaker == "Amber") {
+      voice = 0.8
       background(150, 70, 0);
       tc = color(255, 100, 0);
     } else if (this.speaker == "George") {
+      voice = 1.2
       background(30, 50, 80);
       tc = color(85, 155, 230);
     } else if (this.speaker == "Harriet") {
+      voice = 1.5
       background(140, 10, 125);
       tc = color(255, 0, 220);
     } else if (this.speaker == "Watson") {
+      voice = 1
       background(100, 100, 0);
       tc = color(255, 255, 0);
     } else if (this.speaker == "Nate") {
+      voice = 1
       background(200);
       tc = color(255);
     } else if (this.speaker == "Bee") {
+      voice = 2
       background(200, 0, 0);
       tc = color(255, 0, 0);
     } else if (this.speaker == "Blake") {
+      voice = 1.1
       background(0, 100, 0);
       tc = color(0, 255, 0);
     } else {
+      voice = 1
       background(255);
       tc = color(255);
     }
@@ -338,17 +380,17 @@ class Slide {
     if (this.quote != false) {
       if (this.speaker != "Nate") {
         text(
-          `${this.speaker}: ${this.quote}`,
+          `${this.speaker}: ${this.quote.substring(0, index)}`,
           width / 30,
           height / 1.4,
           width - width / 30
         );
       } else {
-        text(`${this.quote}`, width / 30, height / 1.4, width - width / 30);
+        text(`${this.quote.substring(0, index)}`, width / 30, height / 1.4, width - width / 30);
       }
     }
     if (this.smode == "button") {
-      for (let button of buttons) {
+      for (var button of buttons) {
         button.show();
       }
     }
@@ -411,7 +453,7 @@ function makeBar() {
 }
 
 function windowResized() {
-  let cnv
+  var cnv
   if (windowHeight > map(9, 0, 16, 0, windowWidth)) {
     cnv = createCanvas(windowWidth, map(9, 0, 16, 0, windowWidth));
   } else {

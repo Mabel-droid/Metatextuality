@@ -1163,6 +1163,55 @@ function makePath() {
   /* ------------------------------ */
 
   speaker = "Nate";
+  quote = "Tu e George procuram outro caminho, encontrando um buraco na parede.";
+  sprite1 = Georgesad2;
+  sprite2 = false;
+
+  ord = "c";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = "É pequeno, mas consegues passar.";
+  sprite1 = Georgesad2;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "button";
+
+  sbount = 2;
+  sbt1 = "Explorar";
+  sbt2 = "Voltar";
+  sbt3 = false;
+  sbt4 = false;
+
+  slide = new Slide(
+    speaker,
+    quote,
+    sprite1,
+    sprite2,
+    ord,
+    pos,
+    smode,
+    sbount,
+    sbt1,
+    sbt2,
+    sbt3,
+    sbt4
+  );
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
   quote = "A cada passo, o ambiente torna-se mais escuro.";
   sprite1 = Georgesad2;
   sprite2 = false;
@@ -1262,21 +1311,6 @@ function makePath() {
   sprite2 = false;
 
   ord = "b";
-  pos = 0;
-
-  smode = "forward";
-
-  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
-  slides.push(slide);
-
-  /* ------------------------------ */
-
-  speaker = "Nate";
-  quote = "Tu e Amber caminham pelo corredor escuro.";
-  sprite1 = Georgehappy2;
-  sprite2 = false;
-
-  ord = "c";
   pos = 0;
 
   smode = "forward";
