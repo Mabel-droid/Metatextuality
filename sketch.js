@@ -9,7 +9,7 @@ var tc;
 var bg;
 var quote;
 var index = 0;
-var lastMillis = 0;
+var textMillis = 0;
 var sprite1;
 var sprite2;
 var bt1, bt2, bt3, bt4;
@@ -22,8 +22,10 @@ var stop = false;
 var bars = [];
 var loading = true;
 var slidecheck = 0;
-var beep;
 var voice = 1;
+var selcheck;
+var textbar = "|";
+var barMillis;
 
 function preload() {
   // loading
@@ -35,7 +37,7 @@ function preload() {
 
   titlecard = loadImage("./sprites/other/titlecard.png");
 
-  beep = loadSound('./sprites/beep.mp3');
+  beep = loadSound('./sprites/click.mp3');
 
   // Amber sprites
   Amberangry1 = loadImage("./sprites/char/Amber/Amber_angry.png");
@@ -108,6 +110,9 @@ function setup() {
 }
 
 function draw() {
+
+  textFont('Courier New')
+
   if (mouseIsPressed == true && (slides[showSlide].smode == "forward" || slides[showSlide].smode == "loop") && mouseButton === LEFT || (mouseX < width / 10 && mouseX > 5 && mouseY < width / 30 && mouseY > 5)) {
     press = false;
   }
@@ -122,20 +127,29 @@ function draw() {
     }
   }
 
-  if (millis() > lastMillis + 25 && index != slides[showSlide].quote.length && slides[showSlide].quote != false
+  if (millis() > barMillis + 500) {
+    if (textbar == "|") {
+      textbar = " "
+    } else {
+      textbar = "|"
+    }
+    barMillis = millis()
+  }
+
+  if (millis() > textMillis + 50 && index != slides[showSlide].quote.length && slides[showSlide].quote != false
   ) {
     console.log("Typing")
 
-    if (slides[showSlide].quote[index] != (" ") && slides[showSlide].quote[index] != (",") && slides[showSlide].quote[index] != (".")) {
+    // if (slides[showSlide].quote[index] != (" ") && slides[showSlide].quote[index] != (",") && slides[showSlide].quote[index] != (".")) {
 
-      beep.amp(0.2)
-      beep.rate(random((voice * 0.9), (voice * 1.1)))
+    beep.amp(0.2)
+    beep.rate(random((voice * 0.9), (voice * 1.1)))
 
-      beep.play()
-    }
+    beep.play()
+    //}
 
     index = index + 1;
-    lastMillis = millis();
+    textMillis = millis();
   }
 
   if (slidecheck != cslide) {
@@ -380,13 +394,13 @@ class Slide {
     if (this.quote != false) {
       if (this.speaker != "Nate") {
         text(
-          `${this.speaker}: ${this.quote.substring(0, index)}`,
+          `${this.speaker}: ${this.quote.substring(0, index)}${textbar}`,
           width / 30,
           height / 1.4,
           width - width / 30
         );
       } else {
-        text(`${this.quote.substring(0, index)}`, width / 30, height / 1.4, width - width / 30);
+        text(`${this.quote.substring(0, index)}${textbar}`, width / 30, height / 1.4, width - width / 30);
       }
     }
     if (this.smode == "button") {
