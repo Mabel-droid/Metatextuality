@@ -26,6 +26,7 @@ var voice = 1;
 var selcheck;
 var textbar = "|";
 var barMillis;
+var typerate = 0.05;
 
 function preload() {
   // loading
@@ -126,30 +127,25 @@ function draw() {
       break;
     }
   }
+  if (index != slides[showSlide].quote.length && slides[showSlide].quote != false) {
+    if (millis() > textMillis + map(typerate, 0, 1, 0, 1000)
+    ) {
+      console.log("Typing")
 
-  if (millis() > barMillis + 500) {
-    if (textbar == "|") {
-      textbar = " "
-    } else {
-      textbar = "|"
+      // if (slides[showSlide].quote[index] != (" ") && slides[showSlide].quote[index] != (",") && slides[showSlide].quote[index] != (".")) {
+
+      beep.amp(0.2)
+      beep.rate(random((voice * 0.9), (voice * 1.1)))
+
+      beep.play()
+      //}
+
+      index = index + 1;
+      textMillis = millis();
     }
-    barMillis = millis()
-  }
-
-  if (millis() > textMillis + 50 && index != slides[showSlide].quote.length && slides[showSlide].quote != false
-  ) {
-    console.log("Typing")
-
-    // if (slides[showSlide].quote[index] != (" ") && slides[showSlide].quote[index] != (",") && slides[showSlide].quote[index] != (".")) {
-
-    beep.amp(0.2)
-    beep.rate(random((voice * 0.9), (voice * 1.1)))
-
-    beep.play()
-    //}
-
-    index = index + 1;
-    textMillis = millis();
+    textbar = "|"
+  } else {
+    textbar = " "
   }
 
   if (slidecheck != cslide) {
@@ -389,7 +385,7 @@ class Slide {
     rect(0, height / 1.5, width, height / 2);
     fill(tc);
     noStroke();
-    textSize(width / 30);
+    textSize(width / 40);
     textAlign(LEFT, TOP);
     if (this.quote != false) {
       if (this.speaker != "Nate") {
