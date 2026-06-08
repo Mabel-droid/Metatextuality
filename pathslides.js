@@ -1178,7 +1178,22 @@ function makePath() {
   /* ------------------------------ */
 
   speaker = "Nate";
-  quote = "É pequeno, mas consegues passar.";
+  quote = "E pequeno, mas consegues passar.";
+  sprite1 = Georgesad2;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = false;
   sprite1 = Georgesad2;
   sprite2 = false;
 
@@ -1306,14 +1321,59 @@ function makePath() {
   /* ------------------------------ */
 
   speaker = "Nate";
-  quote = "Tu e Amber caminham pelo corredor escuro.";
-  sprite1 = Georgehappy2;
+  quote = "Seguindo na direção do som, tu depara-se com dois pontos brancos no escuro.";
+  sprite1 = false;
   sprite2 = false;
 
   ord = "b";
   pos = 0;
 
   smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = "Os olhos de algo. Provavelmente o que fez aquele som de rosnar.";
+  sprite1 = false;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = "A criatura te observa sem se mexer ou fazer som.";
+  sprite1 = false;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = "Clique com o rato quando a barra branca estiver no meio.";
+  sprite1 = false;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "bar";
 
   slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
   slides.push(slide);
@@ -1365,23 +1425,8 @@ function makePath() {
 
   /* ------------------------------ */
 
-  speaker = "Amber";
-  quote = "Para derrotar o rato, clique quando a barra branca estiver na área verde ou amarela. Quando pronto, clique para avançar.";
-  sprite1 = false;
-  sprite2 = false;
-
-  ord = "a";
-  pos = 0;
-
-  smode = "forward";
-
-  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
-  slides.push(slide);
-
-  /* ------------------------------ */
-
   speaker = "Nate";
-  quote = false;
+  quote = "Clique com o rato quando a barra branca estiver no meio.";
   sprite1 = false;
   sprite2 = false;
 

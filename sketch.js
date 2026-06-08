@@ -127,21 +127,22 @@ function draw() {
       break;
     }
   }
-  if (index != slides[showSlide].quote.length && slides[showSlide].quote != false) {
-    if (millis() > textMillis + map(typerate, 0, 1, 0, 1000)
-    ) {
-      console.log("Typing")
+  if (index < slides[showSlide].quote.length && slides[showSlide].quote != false) {
+    if (slides[showSlide].smode == "bar") { index = slides[showSlide].quote.length }
+    else {
+      if (millis() > textMillis + map(typerate, 0, 1, 0, 1000)
+      ) {
+        console.log("Typing")
 
-      // if (slides[showSlide].quote[index] != (" ") && slides[showSlide].quote[index] != (",") && slides[showSlide].quote[index] != (".")) {
+        beep.amp(0.2)
+        beep.rate(random((voice * 0.9), (voice * 1.1)))
 
-      beep.amp(0.2)
-      beep.rate(random((voice * 0.9), (voice * 1.1)))
+        beep.play()
+        //}
 
-      beep.play()
-      //}
-
-      index = index + 1;
-      textMillis = millis();
+        index = index + 1;
+        textMillis = millis();
+      }
     }
     textbar = "|"
   } else {
@@ -390,13 +391,13 @@ class Slide {
     if (this.quote != false) {
       if (this.speaker != "Nate") {
         text(
-          `${this.speaker}: ${this.quote.substring(0, index)}${textbar}`,
+          `${this.speaker}: ${this.quote.substring(0, index)} ${textbar}`,
           width / 30,
           height / 1.4,
           width - width / 30
         );
       } else {
-        text(`${this.quote.substring(0, index)}${textbar}`, width / 30, height / 1.4, width - width / 30);
+        text(`${this.quote.substring(0, index)} ${textbar}`, width / 30, height / 1.4, width - width / 30);
       }
     }
     if (this.smode == "button") {
