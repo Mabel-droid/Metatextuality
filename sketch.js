@@ -178,7 +178,8 @@ function draw() {
     strokeWeight(3);
     textSize(width / 30);
     textAlign(CENTER, CENTER);
-    text(`Final ${uends} de ${endings}`, width / 2, height / 2);
+    text(`Final ${uends} de ${endings}`, width / 2, height / 2 - width / 15);
+    text(`Clique com o rato para recomeçar`, width / 2, height / 2 + width / 15);
   }
 
   //botão de voltar
@@ -258,7 +259,7 @@ function mousePressed() {
         ) {
           index = slides[showSlide].quote.length
         } else {
-          cslide = cslide.slice(0, -2);
+          cslide = cslide.slice(0, - 2);
           console.log(`slide: ${cslide}`);
         }
       } else if (slides[showSlide].smode == "end") {

@@ -262,9 +262,8 @@ function makePath() {
   pos = 0;
 
   smode = "link";
-  snum = "2"
 
-  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode, snum);
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
   slides.push(slide);
 
   /* ------------------------------ */
@@ -1097,9 +1096,8 @@ function makePath() {
   pos = 0;
 
   smode = "loop";
-  snum = "2"
 
-  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode, snum);
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
   slides.push(slide);
 
   /* ------------------------------ */
@@ -1605,9 +1603,8 @@ function makePath() {
   pos = 0;
 
   smode = "link";
-  snum = "2"
 
-  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode, snum);
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
   slides.push(slide);
 
   /* ------------------------------ */
