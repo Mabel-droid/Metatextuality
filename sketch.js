@@ -244,11 +244,32 @@ function mousePressed() {
         }
         console.log(`slide: ${cslide}`);
       } else if (slides[showSlide].smode == "link" && canGo == true) {
-        cslide = slides[showSlide + 2].pos;
-        console.log(`slide: ${cslide}`);
+        if (
+          index != slides[showSlide].quote.length && slides[showSlide].quote != false
+        ) {
+          index = slides[showSlide].quote.length
+        } else {
+          cslide = slides[showSlide + 2].pos;
+          console.log(`slide: ${cslide}`);
+        }
       } else if (slides[showSlide].smode == "loop" && canGo == true) {
-        cslide = cslide.slice(0, -2);
-        console.log(`slide: ${cslide}`);
+        if (
+          index != slides[showSlide].quote.length && slides[showSlide].quote != false
+        ) {
+          index = slides[showSlide].quote.length
+        } else {
+          cslide = cslide.slice(0, -2);
+          console.log(`slide: ${cslide}`);
+        }
+      } else if (slides[showSlide].smode == "end") {
+        if (
+          index != slides[showSlide].quote.length && slides[showSlide].quote != false
+        ) {
+          index = slides[showSlide].quote.length
+        } else {
+          cslide = "a"
+          console.log(`slide: ${cslide}`)
+        }
       }
     }
   }
