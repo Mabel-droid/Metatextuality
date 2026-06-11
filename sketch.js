@@ -24,9 +24,13 @@ var loading = true;
 var slidecheck = 0;
 var voice = 1;
 var selcheck;
-var textbar = "|";
+var textbar = " ";
 var barMillis;
 var typerate = 0.05;
+
+// debug
+var fastmode = false;
+var voltar = false;
 
 function preload() {
   // loading
@@ -128,7 +132,9 @@ function draw() {
     }
   }
   if (index < slides[showSlide].quote.length && slides[showSlide].quote != false) {
-    if (slides[showSlide].smode == "bar") { index = slides[showSlide].quote.length }
+    if (slides[showSlide].smode == "bar") {
+      index = slides[showSlide].quote.length
+    }
     else {
       if (millis() > textMillis + map(typerate, 0, 1, 0, 1000)
       ) {
@@ -143,8 +149,10 @@ function draw() {
         index = index + 1;
         textMillis = millis();
       }
+      textbar = "|"
     }
-    textbar = "|"
+  } else if (index != slides[showSlide].quote.length && slides[showSlide].quote != false) {
+    index = slides[showSlide].quote.length
   } else {
     textbar = " "
   }
@@ -175,24 +183,29 @@ function draw() {
       slides[showSlide].unlock = true
       uends++
     }
-    stroke(0);
-    strokeWeight(3);
-    textSize(width / 30);
-    textAlign(CENTER, CENTER);
-    text(`Final ${uends} de ${endings}`, width / 2, height / 2);
+    if (index == slides[showSlide].quote.length && slides[showSlide].quote != false) {
+      stroke(0);
+      strokeWeight(3);
+      textSize(width / 30);
+      textAlign(CENTER, CENTER);
+      text(`Final ${uends} de ${endings}`, width / 2, height / 2.2);
+      text(`Clique com o rato para recomeçar`, width / 2, height / 1.8);
+    }
   }
 
   //botão de voltar
-  if (mouseX < width / 10 && mouseX > 5 && mouseY < width / 30 && mouseY > 5) {
-    fill(0, 200, 0);
-  } else {
-    fill(0, 0, 0);
+  if (voltar == true) {
+    if (mouseX < width / 10 && mouseX > 5 && mouseY < width / 30 && mouseY > 5) {
+      fill(0, 200, 0);
+    } else {
+      fill(0, 0, 0);
+    }
+    stroke(255);
+    strokeWeight(3);
+    textSize(width / 30);
+    textAlign(LEFT, TOP);
+    text("Voltar", 5, 5);
   }
-  stroke(255);
-  strokeWeight(3);
-  textSize(width / 30);
-  textAlign(LEFT, TOP);
-  text("Voltar", 5, 5);
 
   if (cslide == "a") {
     image(titlecard, 0, 0, width, height);
@@ -230,7 +243,7 @@ function makeButton(bount, bt1, bt2, bt3, bt4) {
 function mousePressed() {
   if (loading == false) {
     if (mouseButton === LEFT) {
-      if (mouseX < width / 10 && mouseX > 5 && mouseY < width / 30 && mouseY > 5) {
+      if (voltar == true && mouseX < width / 10 && mouseX > 5 && mouseY < width / 30 && mouseY > 5) {
         if (cslide != "aa") {
           cslide = cslide.slice(0, -1);
           console.log(`slide: ${cslide}`);
@@ -245,11 +258,32 @@ function mousePressed() {
         }
         console.log(`slide: ${cslide}`);
       } else if (slides[showSlide].smode == "link" && canGo == true) {
-        cslide = slides[showSlide + 2].pos;
-        console.log(`slide: ${cslide}`);
+        if (
+          index != slides[showSlide].quote.length && slides[showSlide].quote != false
+        ) {
+          index = slides[showSlide].quote.length
+        } else {
+          cslide = slides[showSlide + 2].pos;
+          console.log(`slide: ${cslide}`);
+        }
       } else if (slides[showSlide].smode == "loop" && canGo == true) {
-        cslide = cslide.slice(0, -2);
-        console.log(`slide: ${cslide}`);
+        if (
+          index != slides[showSlide].quote.length && slides[showSlide].quote != false
+        ) {
+          index = slides[showSlide].quote.length
+        } else {
+          cslide = cslide.slice(0, - 2);
+          console.log(`slide: ${cslide}`);
+        }
+      } else if (slides[showSlide].smode == "end") {
+        if (
+          index != slides[showSlide].quote.length && slides[showSlide].quote != false
+        ) {
+          index = slides[showSlide].quote.length
+        } else {
+          cslide = "a"
+          console.log(`slide: ${cslide}`)
+        }
       }
     }
   }
@@ -412,14 +446,6 @@ function makeBar() {
   rectMode(CENTER);
   fill(255, 0, 0);
   rect(width / 2, height / 1.17, width * 0.95, height / 20);
-  fill(255, 255, 0);
-  rect(width / 2, height / 1.17, map(
-    40,
-    0,
-    100,
-    width / 2 - (width * 0.95) / 2,
-    width / 2 + (width * 0.95) / 2
-  ), height / 20);
   fill(0, 255, 0);
   rect(width / 2, height / 1.17, map(
     10,
@@ -454,10 +480,8 @@ function makeBar() {
     press = false;
     if (pinx > 45 && pinx < 55) {
       cslide += "b"
-    } else if (pinx > 30 && pinx < 70) {
-      cslide += "c"
     } else {
-      cslide += "d"
+      cslide += "c"
     }
     console.log(`slide: ${cslide}`);
   }
