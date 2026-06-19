@@ -2112,6 +2112,21 @@ function makePath() {
 
   /* ------------------------------ */
 
+  speaker = "Watson";
+  quote = "Hm. Tudo correu bem.";
+  sprite1 = Watsonneutral1;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
   speaker = "Nate";
   quote = "Watson anda para o lado. O rato continua correndo para frente.";
   sprite1 = Watsonneutral2;
