@@ -2053,7 +2053,7 @@ function makePath() {
   /* ------------------------------ */
 
   speaker = "Nate";
-  quote = false;
+  quote = "Tu desvias do monstro, correndo para longe.";
   sprite1 = false;
   sprite2 = false;
 
@@ -2068,7 +2068,52 @@ function makePath() {
   /* ------------------------------ */
 
   speaker = "Nate";
-  quote = false;
+  quote = "O monstro cai no chão, rolando de encontro com a porta.";
+  sprite1 = false;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = "É a tua única chance de sobreviver. O monstro está atrás de ti e há um corredor a tua frente.";
+  sprite1 = false;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = "Tu corres o mais rápido que podes. Atrás de ti, escutas os passos pesados do monstro.";
+  sprite1 = false;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = "À frente, tu vês uma escada de mão. Se fores rápido, conseguirá subir sem que o monstro pegue-te.";
   sprite1 = false;
   sprite2 = false;
 
@@ -2084,6 +2129,51 @@ function makePath() {
 
   speaker = "Nate";
   quote = false;
+  sprite1 = false;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "bar";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = "Tu pulas e pegas na escada, subindo. O monstro morde e rasga a base da escada, mas tu consegues escapar a tempo.";
+  sprite1 = false;
+  sprite2 = false;
+
+  ord = "b";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = "A escada leva-te a um sótão. O espaço é pequeno, forçando-te á rastejar no chão.";
+  sprite1 = false;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = "Tu tentas pegar na escada, mas a tua mão escorrega. Tu cais no chão.";
   sprite1 = false;
   sprite2 = false;
 
@@ -2098,7 +2188,7 @@ function makePath() {
   /* ------------------------------ */
 
   speaker = "Nate";
-  quote = false;
+  quote = "O monstro arranha-te as pernas. Sangue é espalhado nas paredes.";
   sprite1 = false;
   sprite2 = false;
 
@@ -2106,6 +2196,66 @@ function makePath() {
   pos = 0;
 
   smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = "Os dentes afiados penetram a tua carne.";
+  sprite1 = false;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "end";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = "O monstro cai em cima de ti.";
+  sprite1 = false;
+  sprite2 = false;
+
+  ord = "c";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = "Os teus ossos abdominais quebram sob o peso da criatura. A tua respiração torna-se difícil.";
+  sprite1 = false;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "forward";
+
+  slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
+  slides.push(slide);
+
+  /* ------------------------------ */
+
+  speaker = "Nate";
+  quote = "O monstro vai embora, deixando-te sozinho na sala para morrer.";
+  sprite1 = false;
+  sprite2 = false;
+
+  ord = "a";
+  pos = 0;
+
+  smode = "end";
 
   slide = new Slide(speaker, quote, sprite1, sprite2, ord, pos, smode);
   slides.push(slide);
