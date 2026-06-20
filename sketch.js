@@ -26,9 +26,10 @@ var voice = 1;
 var selcheck;
 var textbar = " ";
 var barMillis;
-var typerate = 0.05;
+var typerate = 0.075;
 
 // debug
+var debug = true;
 var fastmode = false;
 var voltar = false;
 
@@ -112,6 +113,15 @@ function setup() {
 
   pinx = random(6, 94);
   spx = random([1, -1]);
+
+  if (debug == true) {
+    fastmode = true
+    voltar = true
+  }
+
+  if (fastmode == true) {
+    typerate = 0
+  }
 }
 
 function draw() {
@@ -146,7 +156,11 @@ function draw() {
         beep.play()
         //}
 
-        index++;
+        if (fastmode == true) {
+          index = index + 100
+        } else {
+          index++;
+        }
         textMillis = millis();
       }
       textbar = "|"
@@ -183,7 +197,7 @@ function draw() {
       slides[showSlide].unlock = true
       uends++
     }
-    if (index == slides[showSlide].quote.length && slides[showSlide].quote != false) {
+    if ((index == slides[showSlide].quote.length && slides[showSlide].quote != false) || slides[showSlide].quote == false) {
       stroke(0);
       strokeWeight(3);
       textSize(width / 30);
