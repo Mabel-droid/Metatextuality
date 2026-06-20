@@ -146,7 +146,7 @@ function draw() {
         beep.play()
         //}
 
-        index = index + 1;
+        index++;
         textMillis = millis();
       }
       textbar = "|"

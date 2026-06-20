@@ -1178,7 +1178,7 @@ function makePath() {
   /* ------------------------------ */
 
   speaker = "Nate";
-  quote = "E pequeno, mas consegues passar.";
+  quote = "É pequeno, mas consegues passar.";
   sprite1 = Georgesad2;
   sprite2 = false;
 
