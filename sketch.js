@@ -29,7 +29,7 @@ var barMillis;
 var typerate = 0.075;
 
 // debug
-var debug = true;
+var debug = false;
 var fastmode = false;
 var voltar = false;
 
